@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  scope '(:lang-:country)' do
+    get 'page1', to: 'pages#page'
+  end
+
+  scope 'subdomain' do
+    get 'page2', to: 'pages#page'
+  end
 end
